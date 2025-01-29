@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80D1D9F4"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".Pationts.PationtSign">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Register a new membership"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="234dp"
+        android:layout_height="34dp"
+        android:layout_margin="6dp"
+        android:gravity="center"
+        android:text="Please fill out the following form"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nameTxt"
+        android:layout_width="349dp"
+        android:layout_height="53dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_person_outline_24"
+        android:ems="10"
+        android:hint=" Full name:"
+        android:inputType="textPersonName"
+      />
+
+    <EditText
+        android:id="@+id/birthTxt"
+        android:layout_width="348dp"
+        android:layout_height="50dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_date_range_24"
+        android:ems="10"
+        android:hint=" Birthdate:"
+        android:inputType="date"
+       />
+
+    <EditText
+        android:id="@+id/addressTxt"
+        android:layout_width="349dp"
+        android:layout_height="54dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_add_location_24"
+        android:ems="10"
+        android:hint="address:"
+         />
+
+    <EditText
+        android:id="@+id/ponetxt"
+        android:layout_width="352dp"
+        android:layout_height="58dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_phone_24"
+        android:ems="10"
+        android:hint="phone:"
+
+        android:layout_margin="6dp"
+
+        android:inputType="number"
+       />
+
+    <EditText
+        android:id="@+id/emailTxt"
+        android:layout_width="352dp"
+        android:layout_height="58dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:ems="10"
+        android:layout_margin="6dp"
+
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+         />
+
+    <EditText
+        android:id="@+id/confirmPass"
+        android:layout_width="353dp"
+        android:layout_height="53dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:ems="10"
+        android:hint="confirm password"
+
+        android:layout_margin="6dp"
+
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="349dp"
+        android:layout_height="54dp"
+        android:background="@drawable/textfeild"
+        android:drawableStart="@drawable/baseline_lock_24"
+        android:ems="10"
+        android:layout_margin="6dp"
+        android:hint="password:"
+        android:inputType="textPassword"
+         />
+
+    <TextView
+        android:id="@+id/haveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="Already have an Account"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+         />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="349dp"
+        android:layout_height="57dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/blue"
+        android:text="Signup!"
+     />
+
+</LinearLayout>
