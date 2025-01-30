@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
+import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,11 +19,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.MediaController;
 
 import com.example.GraduationProject.Adapters.DoctorAdapter;
 import com.example.GraduationProject.Adapters.PationtAdapter;
+import com.example.GraduationProject.Doctors.DoctorSettings;
 import com.example.GraduationProject.R;
 import com.example.GraduationProject.modules.Topics;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -53,11 +59,15 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
 
     PationtAdapter adapter;
 
+    PlayerView opening_playerView;
+    private ExoPlayer player;
+
 
     FloatingActionButton fab;
     EditText Updatenote;
     LinearLayoutManager layoutManager = new LinearLayoutManager(this);
     RecyclerView rv;
+
     @SuppressLint({"MissingInflatedId", "CommitTransaction"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +75,7 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
         setContentView(R.layout.activity_home_screen);
         rv = findViewById(R.id.recyclerview);
         items = new ArrayList<Topics>();
-        adapter =new PationtAdapter(this,items,this,this);
+        adapter = new PationtAdapter(this, items, this, this);
         getTopics();
         searchView = findViewById(R.id.searchview);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -162,12 +172,8 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.chat:
-                startActivity(new Intent(HomeScreen.this, ChatActivity.class));
-
-                break;
             case R.id.profile:
-                startActivity(new Intent(HomeScreen.this, ProfilePAtiont.class));
+                startActivity(new Intent(HomeScreen.this, PatientSettings.class));
 
                 break;
 
@@ -264,4 +270,6 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, content);
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
+
+
 }

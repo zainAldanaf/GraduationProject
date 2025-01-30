@@ -33,6 +33,7 @@
         <!--            android:textSize="28dp"-->
         <!--            android:textStyle="normal" />-->
 
+
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchview"
             android:layout_width="match_parent"

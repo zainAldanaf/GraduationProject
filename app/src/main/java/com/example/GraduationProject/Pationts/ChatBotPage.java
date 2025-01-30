@@ -37,8 +37,8 @@ public class ChatBotPage extends AppCompatActivity {
     private chatbotadapter chatAdapter;
     private List<chatbotpatient> chatMessages;
 
-    private static final String OPENAI_API_KEY = "My_Test_Key"; // Replace with your API key
-    private static final String MODEL = "gpt-3.5-turbo"; // Use the GPT-3.5 model
+    private static final String OPENAI_API_KEY = "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"; // Replace with your API key
+    private static final String MODEL = "gpt-4o-mini"; // Use the GPT-3.5 model
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

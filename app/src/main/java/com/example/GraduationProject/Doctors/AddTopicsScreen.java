@@ -187,7 +187,11 @@ public class AddTopicsScreen extends AppCompatActivity {
                             // Save topic to Firestore
                             firebaseFirestore.collection("Topics")
                                     .add(topic)
+
                                     .addOnSuccessListener(documentReference -> {
+                                        sendNotificationToPatients("New Topic Added!", "A doctor has added a new topic.");
+
+
                                         Toast.makeText(AddTopicsScreen.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                                         // Navigate back to home after successfully adding the topic
                                         startActivity(new Intent(AddTopicsScreen.this, DoctorHome.class)); // Change to your home screen activity

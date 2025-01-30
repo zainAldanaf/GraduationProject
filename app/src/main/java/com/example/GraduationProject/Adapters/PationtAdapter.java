@@ -43,7 +43,7 @@ public class PationtAdapter extends RecyclerView.Adapter<PationtAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder , @SuppressLint("RecyclerView") final int position) {
 
         holder.title.setText(mData.get(position).getTopic_title());
-        holder.content.setText(mData.get(position).getTopic_content());
+    //    holder.content.setText(mData.get(position).getTopic_content());
         Picasso.with(mInflater.getContext()).load(mData.get(position).getImage()).into(holder.topicimage);
 
 
@@ -95,7 +95,7 @@ public class PationtAdapter extends RecyclerView.Adapter<PationtAdapter.ViewHold
             this.title = itemView.findViewById(R.id.topictitle);
            // this.notification = itemView.findViewById(R.id.notification);
 
-            this.content = itemView.findViewById(R.id.topicdes);
+        //    this.content = itemView.findViewById(R.id.topicdes);
             this.edit = itemView.findViewById(R.id.edit);
             this.card = itemView.findViewById(R.id.showmore);
 

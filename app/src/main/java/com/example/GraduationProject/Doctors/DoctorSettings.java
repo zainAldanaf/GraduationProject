@@ -18,6 +18,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.GraduationProject.INFO_Page;
 import com.example.GraduationProject.R;
 
 import java.util.Locale;
@@ -26,8 +27,9 @@ public class DoctorSettings extends AppCompatActivity {
 
      Switch themeSwitch;
      Spinner languageSpinner;
-     LinearLayout profile_settings;
-     TextView go_profile;
+     TextView info_settings;
+     TextView profile_settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,66 +41,66 @@ public class DoctorSettings extends AppCompatActivity {
             return insets;
         });
 
-        themeSwitch = findViewById(R.id.theme_switch);
-        languageSpinner = findViewById(R.id.language_spinner);
+      //  themeSwitch = findViewById(R.id.theme_switch);
+      //  languageSpinner = findViewById(R.id.language_spinner);
 
-        go_profile=findViewById(R.id.profile_go_settings);
-        go_profile.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DoctorSettings.this, DoctorProfile.class));
-            }
-        });
-        profile_settings=findViewById(R.id.profile_settings_page);
+        profile_settings = findViewById(R.id.Profile_Settings);
         profile_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DoctorSettings.this, DoctorProfile.class));
+            }
+        });
+        info_settings = findViewById(R.id.Info_Settings);
+        info_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DoctorSettings.this, INFO_Page.class));
 
             }
         });
+    }}
         // Handle Theme Switch
-        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-        });
-
-        // Handle Language Selection
-        languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
-                String selectedLanguage = (String) parent.getItemAtPosition(position);
-                setLocale(selectedLanguage);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
-        });
-    }
-
-    // Change App Language
-    private void setLocale(String language) {
-        Locale locale;
-        switch (language) {
-            case "Arabic":
-                locale = new Locale("ar");
-                break;
-            case "French":
-                locale = new Locale("fr");
-                break;
-            default:
-                locale = new Locale("en");
-        }
-
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.setLocale(locale);
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
-
-        // Refresh Activity
-        recreate();
-    }
-}
+//        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+//            if (isChecked) {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//            } else {
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//            }
+//        });
+//
+//        // Handle Language Selection
+//        languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, android.view.View view, int position, long id) {
+//                String selectedLanguage = (String) parent.getItemAtPosition(position);
+//                setLocale(selectedLanguage);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {}
+//        });
+//    }
+//
+//    // Change App Language
+//    private void setLocale(String language) {
+//        Locale locale;
+//        switch (language) {
+//            case "Arabic":
+//                locale = new Locale("ar");
+//                break;
+//            case "French":
+//                locale = new Locale("fr");
+//                break;
+//            default:
+//                locale = new Locale("en");
+//        }
+//
+//        Locale.setDefault(locale);
+//        Configuration config = new Configuration();
+//        config.setLocale(locale);
+//        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+//
+//        // Refresh Activity
+//        recreate();
+//    }

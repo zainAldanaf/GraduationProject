@@ -12,6 +12,13 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="about">
+        Palliative care&#10;is specialized medical care focused on improving the quality of life for individuals with serious, chronic, or life-threatening illnesses.&#10;
+        It provides relief from pain, symptoms, and emotional distress while supporting patients and their families.&#10;
+        Unlike hospice care, palliative care can be given **alongside curative treatments** at any stage of an illness.&#10;
+        A team of doctors, nurses, and other specialists work together to address physical, psychological, social, and spiritual needs.&#10;
+        The goal is to enhance comfort, dignity, and overall well-being, ensuring the best possible quality of life for patients and their loved ones.&#10;
+    </string>
 
     <string-array name="language_opt">
         <item>English</item>
