@@ -189,7 +189,6 @@ public class AddTopicsScreen extends AppCompatActivity {
                                     .add(topic)
 
                                     .addOnSuccessListener(documentReference -> {
-                                        sendNotificationToPatients("New Topic Added!", "A doctor has added a new topic.");
 
 
                                         Toast.makeText(AddTopicsScreen.this, "Added Successfully", Toast.LENGTH_SHORT).show();
