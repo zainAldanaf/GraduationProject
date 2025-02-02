@@ -18,6 +18,10 @@ import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.GraduationProject.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,6 +36,9 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -193,6 +200,7 @@ public class AddTopicsScreen extends AppCompatActivity {
 
                                         Toast.makeText(AddTopicsScreen.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                                         // Navigate back to home after successfully adding the topic
+                                        sendNotificationToPatients(title, content);
                                         startActivity(new Intent(AddTopicsScreen.this, DoctorHome.class)); // Change to your home screen activity
                                         finish();
                                     })
@@ -205,6 +213,42 @@ public class AddTopicsScreen extends AppCompatActivity {
                     Toast.makeText(AddTopicsScreen.this, "Image upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
+    private void sendNotificationToPatients(String title, String content) {
+            String url = "https://fcm.googleapis.com/fcm/send";
+            String serverKey = "YOUR_SERVER_KEY"; // Replace with your Firebase Server Key
+
+            JSONObject notification = new JSONObject();
+            JSONObject notificationBody = new JSONObject();
+            try {
+                notificationBody.put("title", "New Topic: " + title);
+                notificationBody.put("body", content);
+                notification.put("to", "/topics/Topics");
+                notification.put("notification", notificationBody);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            // 🔹 Initialize Volley RequestQueue
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                    Request.Method.POST, url, notification,
+                    response -> Log.d("FCM", "Notification sent successfully!"),
+                    error -> Log.e("FCM", "Notification failed: " + error.toString())) {
+
+                @Override
+                public Map<String, String> getHeaders() {
+                    Map<String, String> headers = new HashMap<>();
+                    headers.put("Authorization", "key=" + serverKey);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+            };
+
+            // 🔹 Add the request to the Volley Queue
+            requestQueue.add(jsonObjectRequest);
+        }
+
 
 
 //    public void uploadtopic(){

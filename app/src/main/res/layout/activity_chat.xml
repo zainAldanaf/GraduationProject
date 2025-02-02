@@ -11,7 +11,8 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4A96B8">
+        app:tabTextColor="@color/NEW"
+        android:background="@color/blue">
 
     </com.google.android.material.tabs.TabLayout>
 

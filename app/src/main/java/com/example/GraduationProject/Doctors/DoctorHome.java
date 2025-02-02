@@ -39,7 +39,9 @@ import java.util.ArrayList;
 
 
 public class DoctorHome extends AppCompatActivity implements DoctorAdapter.ItemClickListener ,DoctorAdapter.ItemClickListener2 {
-FloatingActionButton fba;
+Button fba;
+Button chatBtn;
+
     ImageView imageView;
     VideoView videoView;
     Button Choosevideo;
@@ -70,26 +72,28 @@ FloatingActionButton fba;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_home);
 
-        fba=findViewById(R.id.fab);
+        fba=findViewById(R.id.fab2);
+        chatBtn = findViewById(R.id.chatBtn);
 
         rv = findViewById(R.id.recyclerview);
         items = new ArrayList<Topics>();
         adapter =new DoctorAdapter(this,items,this,this);
        getTopics();
+
         fba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DoctorHome.this, AddTopicsScreen.class));
 
-            }
-        });
-//        fba_chat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(DoctorHome.this, ChatDoctor.class));
-//
-//            }
-//        });
+           }     });
+
+        chatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DoctorHome.this, ChatDoctor.class));
+
+            }     });
+
     }
 
     // showing all the doct topics
@@ -225,7 +229,9 @@ FloatingActionButton fba;
 
                 break;
             case R.id.chatdcalendar:
-                startActivity(new Intent(DoctorHome.this, DoctorCalendar.class));
+                Intent intent = new Intent(DoctorHome.this, DoctorCalendar.class);
+                startActivity(intent);
+
 
 
         }

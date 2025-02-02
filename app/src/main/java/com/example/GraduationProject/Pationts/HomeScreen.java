@@ -54,6 +54,8 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
     FirebaseFirestore firebaseFirestore;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<Topics> items;
+    ArrayList<String> diseaseCategories;
+
     DoctorAdapter[] myListData;
     private FirebaseAnalytics mFirebaseAnalytics;
 
@@ -80,6 +82,14 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
         searchView = findViewById(R.id.searchview);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("Topics");
+
+        if (getIntent().hasExtra("title")) {
+            Intent intent = new Intent(this, DetailsScreen.class);
+            intent.putExtra("title", getIntent().getStringExtra("title"));
+            intent.putExtra("content", getIntent().getStringExtra("content"));
+            startActivity(intent);
+        }
 
         fab = findViewById(R.id.ChatBotPatient);
 
@@ -87,7 +97,7 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
             Log.d("HomeScreen", "FAB clicked");
 
             // Open the ChatBotActivity
-            Intent intent = new Intent(HomeScreen.this, ChatBotPage.class);
+            Intent intent = new Intent(HomeScreen.this, ChatActivity.class);
             startActivity(intent);
         });
         FirebaseMessaging.getInstance().subscribeToTopic("Topics")
@@ -180,6 +190,29 @@ public class HomeScreen extends AppCompatActivity implements PationtAdapter.Item
         }
 
            return true;
+    }
+    private void getCategories() {
+        // Retrieve disease categories from Firestore
+        db.collection("diseases").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot documentSnapshot : task.getResult()) {
+                        if (documentSnapshot.exists()) {
+                            String category = documentSnapshot.getString("name");
+                            diseaseCategories.add(category);
+                        }
+                    }
+                    updateRecyclerView();
+                }
+            }
+        });
+    }
+    private void updateRecyclerView() {
+        rv.setLayoutManager(layoutManager);
+        rv.setHasFixedSize(true);
+        rv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
     public  void getTopics(){
         db.collection("Topics").get()

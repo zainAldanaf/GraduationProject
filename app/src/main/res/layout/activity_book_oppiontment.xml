@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookOppiontment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="Enter Your Info To Book An Appiontment"
+            android:textColor="@color/blue"
+            android:textSize="21sp"
+            android:layout_marginBottom="80dp"
+            android:gravity="center"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="34dp" />
+
+        <EditText
+            android:id="@+id/name_opp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+
+            android:hint="Enter Your Name"
+            android:inputType="text"
+            android:textColor="@color/blue"
+            android:textColorHint="@color/blue"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="106dp" />
+
+        <EditText
+            android:id="@+id/address_opp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_margin="20dp"
+
+            android:inputType="text"
+            android:textColorHint="@color/blue"
+            android:textColor="@color/blue"
+            android:hint="Enter Your Address"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="174dp" />
+
+        <TextView
+            android:id="@+id/selected_time_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Selected Date And Time"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/lato_bold"
+            android:layout_margin="20dp"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="235dp" />
+
+        <Button
+            android:id="@+id/pick_date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pick Date And Time"
+            android:backgroundTint="@color/blue"
+            android:layout_margin="20dp"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="343dp" />
+
+        <Button
+            android:id="@+id/add_oppintment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Appointment"
+            android:backgroundTint="@color/blue"
+            android:layout_margin="20dp"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="271dp" />
+    </LinearLayout>
+</ScrollView>

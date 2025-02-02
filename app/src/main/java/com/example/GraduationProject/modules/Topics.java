@@ -38,6 +38,7 @@ public class Topics {
 
     private String topic_content;
     private String image;
+    private  String topic_symptoms;
 
 
     public String getId() {
