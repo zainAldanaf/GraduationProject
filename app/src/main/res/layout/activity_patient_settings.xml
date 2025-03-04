@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/NEW"
-    tools:context=".Pationts.PatientSettings">
+    tools:context=".View.Patients.PatientSettings">
 
 
     <TextView

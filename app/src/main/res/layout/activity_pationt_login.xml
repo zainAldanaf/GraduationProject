@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context=".Pationts.PationtLogin">
+    tools:context=".Controller.Patients.PationtLogin">
 
     <ImageView
         android:id="@+id/textView7"

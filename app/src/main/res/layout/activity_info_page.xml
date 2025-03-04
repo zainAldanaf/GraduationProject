@@ -5,7 +5,7 @@
     android:id="@+id/d_one"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".INFO_Page">
+    tools:context=".View.INFO_Page">
 
     <TextView
         android:id="@+id/textView8"

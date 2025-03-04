@@ -24,93 +24,93 @@
         android:theme="@style/Theme.graduation"
         tools:targetApi="31">
         <activity
-            android:name=".BookOppiontment"
+            android:name=".Controller.BookOppiontment"
             android:exported="false" />
         <activity
-            android:name=".Pationts.PatientSettings"
+            android:name=".View.Patients.PatientSettings"
             android:exported="false" />
         <activity
-            android:name=".INFO_Page"
+            android:name=".View.INFO_Page"
             android:exported="false" />
 
         <activity
-            android:name=".Doctors.DoctorSettings"
+            android:name=".View.Doctors.DoctorSettings"
             android:exported="false" />
         <activity
-            android:name=".Doctors.DoctorCalendar"
+            android:name=".View.Doctors.DoctorCalendar"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
+            android:name=".Controller.TestActivity"
             android:exported="false" />
         <activity
-            android:name=".Pationts.DetailsScreen"
+            android:name=".View.Patients.DetailsScreen"
             android:exported="false" />
         <activity
-            android:name=".Doctors.updateTopic"
+            android:name=".Controller.Doctor.updateTopic"
             android:exported="false" />
         <activity
-            android:name=".Doctors.sendrequest"
+            android:name=".Controller.Doctor.sendrequest"
             android:exported="false" />
         <activity
-            android:name=".Pationts.FindActivity"
+            android:name=".Controller.Patients.FindActivity"
             android:exported="false" />
         <activity
-            android:name=".Doctors.FindPationts"
+            android:name=".Controller.Doctor.FindPationts"
             android:exported="false" />
         <activity
-            android:name=".Doctors.Settings"
+            android:name=".View.Doctors.Settings"
             android:exported="false" />
         <activity
-            android:name=".Pationts.SettingsPage"
+            android:name=".View.Patients.SettingsPage"
             android:exported="false" />
         <activity
-            android:name=".Pationts.ProfileActivity"
+            android:name=".Controller.Patients.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Pationts.ChatPage"
+            android:name=".Controller.Patients.ChatPage"
             android:exported="false" />
         <activity
-            android:name=".Doctors.ChatDoctor"
+            android:name=".View.Doctors.ChatDoctor"
             android:exported="false" />
         <activity
-            android:name=".Doctors.ChatDoctor"
+            android:name=".View.Doctors.ChatDoctor"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".Pationts.ProfilePAtiont"
+            android:name=".View.Patients.ProfilePAtiont"
             android:exported="false" />
         <activity
-            android:name=".Doctors.DoctorProfile"
+            android:name=".View.Doctors.DoctorProfile"
             android:exported="false" />
         <activity
-            android:name=".Doctors.Doctorlogin"
+            android:name=".Controller.Doctor.Doctorlogin"
             android:exported="false" />
         <activity
-            android:name=".Doctors.Doctorsign"
+            android:name=".Controller.Doctor.Doctorsign"
             android:exported="false" />
         <activity
-            android:name=".Pationts.ChatActivity"
+            android:name=".Controller.Patients.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".Doctors.AddTopicsScreen"
+            android:name=".Controller.Doctor.AddTopicsScreen"
             android:exported="false" />
         <activity
-            android:name=".Doctors.DoctorHome"
+            android:name=".Controller.Doctor.DoctorHome"
             android:exported="false" />
         <activity
-            android:name=".Pationts.chooseScreen"
+            android:name=".Controller.Patients.chooseScreen"
             android:exported="false" />
         <activity
-            android:name=".Pationts.PatientsOptions"
+            android:name=".View.Patients.PatientsOptions"
             android:exported="false" />
         <activity
-            android:name=".Pationts.PationtLogin"
+            android:name=".Controller.Patients.PationtLogin"
             android:exported="false" />
         <activity
-            android:name=".SplachScreen"
+            android:name=".View.SplachScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -119,14 +119,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pationts.PationtSign"
+            android:name=".Controller.Patients.PationtSign"
             android:exported="false" />
         <activity
-            android:name=".Pationts.HomeScreen"
+            android:name=".View.Patients.HomeScreen"
             android:exported="false" />
 
         <service
-            android:name=".Pationts.MyFirebaseMessagingService"
+            android:name=".Controller.Patients.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

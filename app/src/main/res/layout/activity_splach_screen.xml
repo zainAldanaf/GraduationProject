@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/NEW"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    tools:context=".SplachScreen">
+    tools:context=".View.SplachScreen">
 
 
     <ImageView

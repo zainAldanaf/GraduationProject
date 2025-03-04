@@ -8,7 +8,7 @@
     android:gravity="center"
     android:background="#80D1D9F4"
     android:layout_height="match_parent"
-    tools:context=".Doctors.Doctorlogin">
+    tools:context=".Controller.Doctor.Doctorlogin">
 
     <TextView
         android:id="@+id/textView7"
